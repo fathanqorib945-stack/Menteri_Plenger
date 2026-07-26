@@ -1,0 +1,1279 @@
+/* ======================================================
+   PERSONAL PROFILE - DINDA MEISYA NURCASILIA
+   Style.css Part 1
+====================================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    --primary:#0f8f63;
+    --secondary:#166534;
+    --gold:#d4af37;
+    --white:#ffffff;
+    --text:#f5f5f5;
+    --glass:rgba(255,255,255,.12);
+    --shadow:0 8px 30px rgba(0,0,0,.25);
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#052e16,#064e3b,#0f766e);
+    color:var(--white);
+    overflow-x:hidden;
+    min-height:100vh;
+    position:relative;
+
+}
+
+/* Background Pattern */
+
+body::before{
+
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:35px 35px;
+    pointer-events:none;
+    z-index:-2;
+
+}
+
+/* Overlay */
+
+body::after{
+
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.18);
+    z-index:-1;
+
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#073b2d;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--gold);
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ffe08a;
+
+}
+
+/* ================= LOADER ================= */
+
+#loader{
+
+    position:fixed;
+    inset:0;
+    background:#02150f;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    transition:.8s;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-logo{
+
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    border:3px solid var(--gold);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:55px;
+    margin:auto;
+    animation:spin 5s linear infinite;
+    box-shadow:0 0 35px rgba(212,175,55,.5);
+
+}
+
+.loader-content h2{
+
+    margin-top:25px;
+    font-family:'Cinzel',serif;
+    letter-spacing:3px;
+
+}
+
+.loader-content p{
+
+    margin-top:10px;
+    opacity:.8;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ================= STARS ================= */
+
+#stars{
+
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,.15);
+
+    z-index:999;
+
+    transition:.4s;
+
+}
+
+nav.scrolled{
+
+    background:rgba(3,38,27,.9);
+    box-shadow:var(--shadow);
+
+}
+
+.logo{
+
+    font-size:28px;
+    color:var(--gold);
+    font-family:'Cinzel',serif;
+    font-weight:bold;
+
+}
+
+nav ul{
+
+    display:flex;
+    list-style:none;
+    gap:35px;
+
+}
+
+nav ul li a{
+
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:var(--gold);
+
+}
+
+/* ================= CLOCK ================= */
+
+#clock{
+
+    position:fixed;
+    top:95px;
+    right:20px;
+
+    backdrop-filter:blur(10px);
+
+    background:var(--glass);
+
+    padding:18px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    z-index:500;
+
+}
+
+#clock h3{
+
+    color:var(--gold);
+
+}
+
+#clock p{
+
+    font-size:14px;
+
+}
+
+/* ================= MUSIC ================= */
+
+#musicBtn{
+
+    position:fixed;
+
+    bottom:25px;
+
+    left:25px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    transition:.3s;
+
+    box-shadow:var(--shadow);
+
+    z-index:999;
+
+}
+
+#musicBtn:hover{
+
+    transform:scale(1.1);
+
+    background:var(--gold);
+
+    color:#222;
+
+}
+
+/* ================= SECTION ================= */
+
+section{
+
+    padding:120px 10%;
+
+}
+
+h2{
+
+    font-family:'Cinzel',serif;
+
+    text-align:center;
+
+    font-size:38px;
+
+    color:var(--gold);
+
+    margin-bottom:50px;
+
+}
+
+/* ======================================================
+   HERO SECTION
+====================================================== */
+
+#home{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:70px;
+    flex-wrap:wrap;
+}
+
+.profile-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.profile-image img{
+
+    width:330px;
+    height:330px;
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:6px solid var(--gold);
+
+    box-shadow:
+    0 0 25px rgba(212,175,55,.4),
+    0 0 70px rgba(15,143,99,.35);
+
+    transition:.5s;
+
+}
+
+.profile-image img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 35px rgba(212,175,55,.7),
+    0 0 90px rgba(15,143,99,.6);
+
+}
+
+.hero-text{
+
+    flex:1;
+
+}
+
+.hero-text h1{
+
+    font-size:58px;
+
+    line-height:1.2;
+
+    font-family:'Cinzel',serif;
+
+    color:white;
+
+}
+
+.hero-text h3{
+
+    margin-top:15px;
+
+    color:var(--gold);
+
+    font-size:30px;
+
+}
+
+.hero-text p{
+
+    margin-top:25px;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+    opacity:.9;
+
+    max-width:550px;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:40px;
+
+    padding:15px 35px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    border-radius:40px;
+
+    transition:.4s;
+
+    font-weight:600;
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-6px);
+
+    background:linear-gradient(135deg,var(--gold),#b68c20);
+
+    color:#111;
+
+}
+
+/* ======================================================
+   BIODATA
+====================================================== */
+
+.biodata-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+.biodata-card table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.biodata-card td{
+
+    padding:18px 12px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    font-size:18px;
+
+}
+
+.biodata-card td:first-child{
+
+    width:230px;
+
+    font-weight:600;
+
+    color:var(--gold);
+
+}
+
+.biodata-card tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+/* ======================================================
+   ABOUT
+====================================================== */
+
+.about-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    line-height:2;
+
+    text-align:center;
+
+    font-size:18px;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+}
+
+.about-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* ======================================================
+   CARD HOVER
+====================================================== */
+
+.biodata-card:hover{
+
+    transform:translateY(-8px);
+
+    transition:.4s;
+
+}
+
+.about-card,
+.biodata-card{
+
+    transition:.4s;
+
+}
+
+/* ======================================================
+   DECORATION LINE
+====================================================== */
+
+h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:4px;
+
+    background:var(--gold);
+
+    margin:15px auto;
+
+    border-radius:50px;
+
+}
+
+/* ======================================================
+   RESPONSIVE HERO
+====================================================== */
+
+@media(max-width:992px){
+
+.hero{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.hero-text p{
+
+    margin:auto;
+    margin-top:20px;
+
+}
+
+.profile-image img{
+
+    width:270px;
+    height:270px;
+
+}
+
+.hero-text h1{
+
+    font-size:42px;
+
+}
+
+.hero-text h3{
+
+    font-size:24px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-text h1{
+
+    font-size:34px;
+
+}
+
+.hero-text h3{
+
+    font-size:20px;
+
+}
+
+.hero-text p{
+
+    font-size:16px;
+
+}
+
+.biodata-card{
+
+    padding:25px;
+
+}
+
+.biodata-card td{
+
+    display:block;
+    width:100%;
+    padding:8px 0;
+
+}
+
+.biodata-card td:first-child{
+
+    width:100%;
+
+}
+
+}
+
+/* ======================================================
+   GALLERY
+====================================================== */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    max-width:1300px;
+    margin:auto;
+}
+
+.gallery img{
+
+    width:100%;
+    height:250px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.45s ease;
+
+    border:3px solid transparent;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.gallery img:hover{
+
+    transform:translateY(-10px) scale(1.03);
+
+    border-color:var(--gold);
+
+    box-shadow:
+    0 0 25px rgba(212,175,55,.45),
+    0 0 60px rgba(15,143,99,.35);
+
+}
+
+/* ======================================================
+   LIGHTBOX
+====================================================== */
+
+#lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.92);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    animation:fadeIn .35s;
+
+}
+
+#lightbox img{
+
+    max-width:90%;
+
+    max-height:88%;
+
+    border-radius:18px;
+
+    border:4px solid var(--gold);
+
+    box-shadow:0 0 35px rgba(212,175,55,.5);
+
+    animation:zoomIn .35s;
+
+}
+
+#close{
+
+    position:absolute;
+
+    top:25px;
+
+    right:40px;
+
+    color:white;
+
+    font-size:45px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#close:hover{
+
+    color:var(--gold);
+
+    transform:rotate(90deg);
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        transform:scale(.7);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ======================================================
+   CONTACT
+====================================================== */
+
+.contact-card{
+
+    width:340px;
+
+    margin:auto;
+
+    padding:35px;
+
+    text-align:center;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(14px);
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.contact-card a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.contact-card i{
+
+    color:#E1306C;
+
+    font-size:45px;
+
+    display:block;
+
+    margin-bottom:18px;
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer{
+
+    margin-top:100px;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(12px);
+
+}
+
+footer p{
+
+    margin:10px 0;
+
+    color:#ddd;
+
+}
+
+footer::before{
+
+    content:"";
+
+    display:block;
+
+    width:140px;
+
+    height:3px;
+
+    background:var(--gold);
+
+    margin:0 auto 25px;
+
+    border-radius:50px;
+
+}
+
+/* ======================================================
+   RESPONSIVE GALLERY
+====================================================== */
+
+@media(max-width:900px){
+
+.gallery{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.gallery{
+
+    grid-template-columns:1fr;
+
+}
+
+.gallery img{
+
+    height:230px;
+
+}
+
+.contact-card{
+
+    width:100%;
+
+}
+
+}
+
+/* ======================================================
+   FINAL EFFECT
+====================================================== */
+
+/* Scroll Progress */
+
+#progressBar{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:0%;
+
+    height:5px;
+
+    background:linear-gradient(90deg,var(--gold),#fff);
+
+    z-index:99999;
+
+}
+
+/* Back To Top */
+
+#topBtn{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:30px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:#222;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+    display:none;
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+#topBtn:hover{
+
+    transform:translateY(-6px);
+
+    background:white;
+
+}
+
+/* Loader Hide */
+
+.loader-hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+/* Floating Animation */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+.profile-image{
+
+    animation:floating 5s ease-in-out infinite;
+
+}
+
+/* Fade Animation */
+
+.fade-up{
+
+    animation:fadeUp 1s;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Glow */
+
+.hero-text h1{
+
+    text-shadow:
+
+    0 0 15px rgba(212,175,55,.2),
+
+    0 0 30px rgba(212,175,55,.1);
+
+}
+
+/* Gallery Animation */
+
+.gallery img{
+
+    animation:galleryFloat 6s ease-in-out infinite;
+
+}
+
+.gallery img:nth-child(even){
+
+    animation-delay:2s;
+
+}
+
+.gallery img:nth-child(odd){
+
+    animation-delay:1s;
+
+}
+
+@keyframes galleryFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* Footer Hover */
+
+footer p{
+
+    transition:.3s;
+
+}
+
+footer p:hover{
+
+    color:var(--gold);
+
+}
+
+/* Selection */
+
+::selection{
+
+    background:var(--gold);
+
+    color:black;
+
+}
+
+/* Smooth Transition */
+
+img,
+button,
+a,
+.card,
+.contact-card,
+.biodata-card,
+.about-card{
+
+    transition:.35s;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+#clock{
+
+display:none;
+
+}
+
+nav{
+
+padding:18px 5%;
+
+}
+
+nav ul{
+
+gap:18px;
+
+}
+
+nav ul li a{
+
+font-size:14px;
+
+}
+
+.logo{
+
+font-size:22px;
+
+}
+
+section{
+
+padding:100px 8%;
+
+}
+
+}
+
+@media(max-width:550px){
+
+nav{
+
+flex-direction:column;
+
+padding:20px;
+
+}
+
+nav ul{
+
+margin-top:15px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.profile-image img{
+
+width:220px;
+
+height:220px;
+
+}
+
+.hero-text h1{
+
+font-size:28px;
+
+}
+
+.hero-text h3{
+
+font-size:18px;
+
+}
+
+h2{
+
+font-size:28px;
+
+}
+
+}
+
+/* End */
