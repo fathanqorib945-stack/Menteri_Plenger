@@ -352,6 +352,28 @@ const reveal = ()=>{
 
 }
 
+const folderBtn=document.querySelectorAll(".folder-btn");
+
+folderBtn.forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+const content=btn.nextElementSibling;
+
+if(content.style.display==="block"){
+
+content.style.display="none";
+
+}else{
+
+content.style.display="block";
+
+}
+
+});
+
+});
+
 window.addEventListener("scroll",reveal);
 
 reveal();
