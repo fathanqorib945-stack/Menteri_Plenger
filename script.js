@@ -8,8 +8,8 @@
 ========================= */
 
 AOS.init({
-    duration: 1000,
-    once: false,
+    duration: 700,
+    once: true,
     easing: "ease-in-out"
 });
 
@@ -306,23 +306,13 @@ galleryImages.forEach((img)=>{
 
     img.addEventListener("mousemove",(e)=>{
 
-        const rect = img.getBoundingClientRect();
-
-        const x = e.clientX - rect.left;
-
-        const y = e.clientY - rect.top;
-
-        img.style.transform =
-        `perspective(800px)
-        rotateY(${(x-rect.width/2)/25}deg)
-        rotateX(${-(y-rect.height/2)/25}deg)
-        scale(1.04)`;
-
+        img.style.transform = "scale(1.03)";
+           
     });
 
     img.addEventListener("mouseleave",()=>{
 
-        img.style.transform="perspective(800px) rotateX(0) rotateY(0) scale(1)";
+        img.style.transform = "scale(1)";
 
     });
 
